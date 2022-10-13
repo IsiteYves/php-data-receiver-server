@@ -39,7 +39,7 @@ if ($_SESSION["active"])
             $pin2Stat = $row["pin2"];
             $pin3Stat = $row["pin3"];
             $pageint = $row["interv"];
-            if ($row["slp"] == 1)
+            if ($row["slp"] ?? null == 1)
             {
                 $sleepStat = "Enabled";
             }
@@ -172,7 +172,7 @@ if ($_SESSION["active"])
   
   <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-target="#selects">Pin Controls</button> | 
   <button type="button" class="btn btn-outline-info " data-toggle="collapse" data-target="#settings">Settings</button> | 
-  <a href="chart.php" class="btn btn-outline-info" role="button" >Chart</a> | 
+  <!-- <a href="chart.php" class="btn btn-outline-info" role="button" >Chart</a> |  -->
   <input type="submit" onclick="return confirm('Are your sure?')" class="btn btn-outline-warning " name="submit3" value="Clear data" />  | 
   <a href="excel.php?device=<?php echo $device; ?>" class="btn btn-outline-warning " role="button"> Download Data</a> | 
   <a href="logout.php" onclick="return confirm('Are your sure?')" class="btn btn-outline-danger " role="button"> Logout</a>
